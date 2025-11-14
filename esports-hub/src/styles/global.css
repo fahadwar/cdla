@@ -13,6 +13,8 @@
 body {
   margin: 0;
   min-height: 100vh;
+  direction: rtl;
+  text-align: right;
 }
 
 a {
@@ -26,6 +28,10 @@ ul {
   margin: 0;
 }
 
+button {
+  font-family: inherit;
+}
+
 .firestore-status {
   margin-top: 2rem;
   padding: 1rem 1.25rem;
@@ -35,6 +41,9 @@ ul {
   max-width: 32rem;
   box-shadow: 0 12px 24px -16px rgba(15, 23, 42, 0.4);
   transition: border-color 0.2s ease, background-color 0.2s ease;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  text-align: right;
 }
 
 .firestore-status h2 {
@@ -57,6 +66,8 @@ ul {
   overflow-x: auto;
   font-family: 'Fira Code', 'SFMono-Regular', 'Menlo', monospace;
   font-size: 0.85rem;
+  direction: ltr;
+  text-align: left;
 }
 
 .firestore-status--loading {
@@ -77,4 +88,210 @@ ul {
 .firestore-status--skipped {
   border-color: rgba(71, 85, 105, 0.35);
   background-color: rgba(226, 232, 240, 0.35);
+}
+
+.auth-card,
+.profile-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 24px 48px -32px rgba(15, 23, 42, 0.3);
+  padding: 2rem;
+  max-width: 420px;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  text-align: right;
+}
+
+.auth-card h1,
+.profile-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.auth-card__notice {
+  background-color: rgba(14, 165, 233, 0.12);
+  border-inline-start: 3px solid rgba(14, 165, 233, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.auth-card__error,
+.profile-card__status--error {
+  background-color: rgba(248, 113, 113, 0.15);
+  border-inline-start: 3px solid rgba(220, 38, 38, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.profile-card__status--success {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-inline-start: 3px solid rgba(5, 150, 105, 0.65);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.auth-form__field {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.auth-form__field input,
+.profile-card__form input {
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: right;
+}
+
+.auth-form__field input[type='email'],
+.auth-form__field input[type='password'],
+.profile-card__form input[type='email'] {
+  direction: ltr;
+  text-align: left;
+}
+
+.auth-form__field input:focus,
+.profile-card__form input:focus {
+  border-color: rgba(59, 130, 246, 0.85);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.auth-form__submit,
+.profile-card__form button {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  border: none;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form__submit:disabled,
+.profile-card__form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-form__submit:not(:disabled):hover,
+.profile-card__form button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -16px rgba(37, 99, 235, 0.55);
+}
+
+.auth-form__switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  justify-content: flex-end;
+}
+
+.auth-form__switch button {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.auth-card__backlink,
+.profile-card__backlink {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.profile-card__meta {
+  margin-top: 0;
+  color: rgba(15, 23, 42, 0.65);
+  font-size: 0.95rem;
+}
+
+.profile-card__details {
+  margin: 1.5rem 0 1rem;
+}
+
+.profile-card__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-card__form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.profile-card__status {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .auth-card,
+  .profile-card {
+    width: 100%;
+  }
+}
+
+.route-guard__message {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 32rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background-color: rgba(148, 163, 184, 0.12);
+  text-align: center;
+  color: #1e293b;
+}
+
+.route-guard__message p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.route-guard__loader {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 4px solid rgba(59, 130, 246, 0.25);
+  border-top-color: rgba(59, 130, 246, 0.85);
+  animation: route-guard-spin 1s linear infinite;
+}
+
+@keyframes route-guard-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

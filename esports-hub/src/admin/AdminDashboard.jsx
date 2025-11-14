@@ -1,9 +1,12 @@
 const AdminDashboard = () => {
   return (
-    <section>
-      <h1>Admin Dashboard</h1>
-      <p>Manage esports content and data from this control center.</p>
-    </section>
+    <div className="admin-placeholder">
+      <h2>مرحبًا بعودتك!</h2>
+      <p>
+        ستعرض هذه اللوحة المؤشرات العامة والروابط السريعة وآخر الأنشطة الخاصة بمنظمتك للرياضات
+        الإلكترونية. سنقوم بإضافة الويدجتات هنا مع ربط مجموعات Firestore في المراحل القادمة.
+      </p>
+    </div>
   );
 };
 

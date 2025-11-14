@@ -1,8 +1,8 @@
 const EventsPage = () => {
   return (
     <section>
-      <h1>Events</h1>
-      <p>Explore upcoming and past esports events.</p>
+      <h1>البطولات</h1>
+      <p>استكشف البطولات القادمة والسابقة في عالم الرياضات الإلكترونية.</p>
     </section>
   );
 };

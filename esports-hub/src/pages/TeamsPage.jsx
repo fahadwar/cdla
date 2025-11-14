@@ -1,8 +1,8 @@
 const TeamsPage = () => {
   return (
     <section>
-      <h1>Teams</h1>
-      <p>Discover professional esports teams and their rosters.</p>
+      <h1>الفرق</h1>
+      <p>استكشف فرق الرياضات الإلكترونية المحترفة وقوائم لاعبيها.</p>
     </section>
   );
 };

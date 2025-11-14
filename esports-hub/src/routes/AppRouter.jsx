@@ -7,7 +7,17 @@ import PlayersPage from '../pages/PlayersPage.jsx';
 import EventsPage from '../pages/EventsPage.jsx';
 import ArticlesPage from '../pages/ArticlesPage.jsx';
 import LoginPage from '../pages/LoginPage.jsx';
+import ProfilePage from '../pages/ProfilePage.jsx';
+import ProtectedRoute from './ProtectedRoute.jsx';
+import AdminLayout from '../admin/AdminLayout.jsx';
 import AdminDashboard from '../admin/AdminDashboard.jsx';
+import TeamsAdmin from '../admin/TeamsAdmin.jsx';
+import PlayersAdmin from '../admin/PlayersAdmin.jsx';
+import EventsAdmin from '../admin/EventsAdmin.jsx';
+import MatchesAdmin from '../admin/MatchesAdmin.jsx';
+import ArticlesAdmin from '../admin/ArticlesAdmin.jsx';
+import UsersAdmin from '../admin/UsersAdmin.jsx';
+import PickemAdmin from '../admin/PickemAdmin.jsx';
 
 const AppRouter = () => {
   return (
@@ -20,8 +30,21 @@ const AppRouter = () => {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
-      <Route path="/admin" element={<AdminDashboard />} />
+
+      <Route element={<ProtectedRoute requiredRole="admin" />}> 
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="teams" element={<TeamsAdmin />} />
+          <Route path="players" element={<PlayersAdmin />} />
+          <Route path="events" element={<EventsAdmin />} />
+          <Route path="matches" element={<MatchesAdmin />} />
+          <Route path="articles" element={<ArticlesAdmin />} />
+          <Route path="users" element={<UsersAdmin />} />
+          <Route path="pickem" element={<PickemAdmin />} />
+        </Route>
+      </Route>
     </Routes>
   );
 };

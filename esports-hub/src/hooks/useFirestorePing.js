@@ -3,10 +3,10 @@ import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '../lib/firebase';
 
 const initialState = isFirebaseConfigured && db
-  ? { status: 'idle', message: 'Preparing Firestore connectivity check.' }
+  ? { status: 'idle', message: 'جارٍ تحضير اختبار الاتصال بـ Firestore.' }
   : {
       status: 'skipped',
-      message: 'Firestore test skipped. Provide Firebase credentials in your .env file to enable the connectivity check.',
+      message: 'تم تجاوز اختبار Firestore. يرجى توفير بيانات Firebase في ملف ‎.env‎ لتفعيل الاختبار.',
     };
 
 const TEST_DOC_PATH = ['appMeta', 'connectivityTest'];
@@ -25,7 +25,7 @@ export default function useFirestorePing() {
     let isCancelled = false;
 
     const runTest = async () => {
-      setResult({ status: 'loading', message: 'Checking Firestore connectivity…' });
+      setResult({ status: 'loading', message: 'جارٍ التحقق من الاتصال بـ Firestore…' });
 
       try {
         await setDoc(
@@ -40,13 +40,13 @@ export default function useFirestorePing() {
         const snapshot = await getDoc(testDocRef);
 
         if (!snapshot.exists()) {
-          throw new Error('The connectivity test document could not be read after writing.');
+          throw new Error('تعذّر قراءة مستند الاختبار بعد كتابته.');
         }
 
         if (!isCancelled) {
           setResult({
             status: 'success',
-            message: 'Successfully connected to Firestore.',
+            message: 'تم الاتصال بـ Firestore بنجاح.',
             data: snapshot.data(),
           });
         }
@@ -54,7 +54,7 @@ export default function useFirestorePing() {
         if (!isCancelled) {
           setResult({
             status: 'error',
-            message: error.message ?? 'Unknown Firestore error occurred.',
+            message: error.message ?? 'حدث خطأ غير معروف في Firestore.',
           });
         }
       }

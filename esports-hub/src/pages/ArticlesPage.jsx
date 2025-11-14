@@ -1,8 +1,8 @@
 const ArticlesPage = () => {
   return (
     <section>
-      <h1>Articles</h1>
-      <p>Latest esports news, recaps, and analysis.</p>
+      <h1>المقالات</h1>
+      <p>أحدث أخبار الرياضات الإلكترونية والتقارير والتحليلات.</p>
     </section>
   );
 };

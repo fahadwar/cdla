@@ -5,11 +5,11 @@ const HomePage = () => {
 
   return (
     <section>
-      <h1>Welcome to Esports Hub</h1>
-      <p>This is the starting point for the public-facing experience.</p>
+      <h1>مرحبًا بكم في منصة الرياضات الإلكترونية</h1>
+      <p>هذه هي نقطة البداية للتجربة العامة على الموقع.</p>
 
       <div className={`firestore-status firestore-status--${status}`}>
-        <h2>Firestore Connectivity</h2>
+        <h2>اتصال Firestore</h2>
         <p>{message}</p>
         {status === 'success' && data && (
           <pre className="firestore-status__payload">{JSON.stringify(data, null, 2)}</pre>

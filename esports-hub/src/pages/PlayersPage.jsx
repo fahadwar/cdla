@@ -1,8 +1,8 @@
 const PlayersPage = () => {
   return (
     <section>
-      <h1>Players</h1>
-      <p>Browse players, their stats, and stories.</p>
+      <h1>اللاعبين</h1>
+      <p>تصفح اللاعبين وإحصاءاتهم وقصصهم.</p>
     </section>
   );
 };

@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  direction: rtl;
 }
 
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  gap: 1.5rem;
   background-color: #1e293b;
   color: #f8fafc;
 }
@@ -16,11 +19,16 @@
 .brand {
   font-size: 1.25rem;
   font-weight: 600;
+  text-align: right;
 }
 
 .main-nav {
   display: flex;
+  align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: right;
 }
 
 .main-nav a {
@@ -30,6 +38,28 @@
 
 .main-nav a.active {
   color: #38bdf8;
+}
+
+.main-nav__status {
+  color: #cbd5f5;
+  font-size: 0.875rem;
+}
+
+.main-nav__button {
+  background-color: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-nav__button:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
 }
 
 .app-main {
@@ -47,11 +77,21 @@
 @media (max-width: 768px) {
   .app-header {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
   }
 
   .main-nav {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
+}
+
+.main-nav__admin {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.1rem;
+}
+
+.main-nav__admin.active {
+  border-color: #38bdf8;
 }
