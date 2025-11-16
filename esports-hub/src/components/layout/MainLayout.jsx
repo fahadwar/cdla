@@ -8,7 +8,7 @@ const MainLayout = () => {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <div className="brand">منصة الرياضات الإلكترونية</div>
+        <div className="brand">CDL بالعربي</div>
         <nav className="main-nav">
           <NavLink to="/" end>
             الرئيسية
@@ -18,6 +18,8 @@ const MainLayout = () => {
           <NavLink to="/players">اللاعبين</NavLink>
           <NavLink to="/events">البطولات</NavLink>
           <NavLink to="/articles">المقالات</NavLink>
+          <NavLink to="/pickem">توقعاتك</NavLink>
+          <NavLink to="/leaderboard">لوحة الصدارة</NavLink>
           {role === 'admin' && (
             <NavLink to="/admin" className="main-nav__admin">
               لوحة التحكم
@@ -40,7 +42,7 @@ const MainLayout = () => {
       <main className="app-main">
         <Outlet />
       </main>
-      <footer className="app-footer">© {new Date().getFullYear()} منصة الرياضات الإلكترونية</footer>
+      <footer className="app-footer">© {new Date().getFullYear()} CDL بالعربي</footer>
     </div>
   );
 };

@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Tajawal', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background-color: #f8fafc;
+  color: #f4f4f2;
+  background-color: #131313;
+  --brand-black: #131313;
+  --brand-black-soft: #1c1c1c;
+  --brand-green: #167c4a;
+  --brand-green-dark: #0d5b30;
+  --brand-green-muted: rgba(22, 124, 74, 0.18);
+  --surface: #181818;
+  --surface-alt: #0f0f0f;
+  --text-strong: #f8f8f6;
+  --text-muted: rgba(248, 248, 246, 0.75);
+  --border-color: rgba(248, 248, 246, 0.12);
 }
 
 * {
@@ -15,6 +27,8 @@ body {
   min-height: 100vh;
   direction: rtl;
   text-align: right;
+  background: radial-gradient(circle at top, #1f1f1f, #0d0d0d 70%);
+  color: var(--text-strong);
 }
 
 a {
@@ -34,12 +48,12 @@ button {
 
 .firestore-status {
   margin-top: 2rem;
-  padding: 1rem 1.25rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background-color: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
   max-width: 32rem;
-  box-shadow: 0 12px 24px -16px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.75);
   transition: border-color 0.2s ease, background-color 0.2s ease;
   margin-inline-start: 0;
   margin-inline-end: auto;
@@ -50,19 +64,21 @@ button {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
+  color: var(--text-strong);
 }
 
 .firestore-status p {
   margin: 0;
   font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 .firestore-status__payload {
   margin-top: 1rem;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--brand-black);
+  color: #b8ffdd;
   overflow-x: auto;
   font-family: 'Fira Code', 'SFMono-Regular', 'Menlo', monospace;
   font-size: 0.85rem;
@@ -71,36 +87,37 @@ button {
 }
 
 .firestore-status--loading {
-  border-color: rgba(30, 64, 175, 0.35);
-  background-color: rgba(191, 219, 254, 0.35);
+  border-color: rgba(22, 124, 74, 0.35);
+  background-color: rgba(22, 124, 74, 0.12);
 }
 
 .firestore-status--success {
-  border-color: rgba(22, 163, 74, 0.45);
-  background-color: rgba(187, 247, 208, 0.45);
+  border-color: rgba(22, 124, 74, 0.65);
+  background-color: rgba(22, 124, 74, 0.2);
 }
 
 .firestore-status--error {
-  border-color: rgba(220, 38, 38, 0.45);
-  background-color: rgba(254, 202, 202, 0.45);
+  border-color: rgba(200, 40, 40, 0.55);
+  background-color: rgba(200, 40, 40, 0.16);
 }
 
 .firestore-status--skipped {
-  border-color: rgba(71, 85, 105, 0.35);
-  background-color: rgba(226, 232, 240, 0.35);
+  border-color: rgba(248, 248, 246, 0.18);
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .auth-card,
 .profile-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 24px 48px -32px rgba(15, 23, 42, 0.3);
+  background: var(--surface);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 24px 64px -48px rgba(0, 0, 0, 0.95);
   padding: 2rem;
-  max-width: 420px;
+  max-width: 480px;
   margin-inline-start: 0;
   margin-inline-end: auto;
   text-align: right;
+  color: var(--text-strong);
 }
 
 .auth-card h1,
@@ -110,29 +127,30 @@ button {
 }
 
 .auth-card__notice {
-  background-color: rgba(14, 165, 233, 0.12);
-  border-inline-start: 3px solid rgba(14, 165, 233, 0.65);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  background-color: var(--brand-green-muted);
+  border-inline-start: 3px solid var(--brand-green);
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  color: var(--text-strong);
 }
 
 .auth-card__error,
 .profile-card__status--error {
-  background-color: rgba(248, 113, 113, 0.15);
-  border-inline-start: 3px solid rgba(220, 38, 38, 0.65);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  background-color: rgba(200, 50, 50, 0.18);
+  border-inline-start: 3px solid rgba(200, 50, 50, 0.9);
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
 .profile-card__status--success {
-  background-color: rgba(16, 185, 129, 0.15);
-  border-inline-start: 3px solid rgba(5, 150, 105, 0.65);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  background-color: rgba(22, 124, 74, 0.2);
+  border-inline-start: 3px solid var(--brand-green);
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
   font-size: 0.95rem;
   margin-top: 1rem;
 }
@@ -151,12 +169,14 @@ button {
 
 .auth-form__field input,
 .profile-card__form input {
-  padding: 0.75rem 0.85rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 0.9rem 0.95rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
   font-size: 0.95rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   text-align: right;
+  background-color: var(--surface-alt);
+  color: var(--text-strong);
 }
 
 .auth-form__field input[type='email'],
@@ -168,21 +188,21 @@ button {
 
 .auth-form__field input:focus,
 .profile-card__form input:focus {
-  border-color: rgba(59, 130, 246, 0.85);
+  border-color: var(--brand-green);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(22, 124, 74, 0.3);
 }
 
 .auth-form__submit,
 .profile-card__form button {
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  background: linear-gradient(135deg, var(--brand-green), var(--brand-green-dark));
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.9rem;
   color: #ffffff;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -197,7 +217,7 @@ button {
 .auth-form__submit:not(:disabled):hover,
 .profile-card__form button:not(:disabled):hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -16px rgba(37, 99, 235, 0.55);
+  box-shadow: 0 18px 30px -18px rgba(22, 124, 74, 0.7);
 }
 
 .auth-form__switch {
@@ -207,12 +227,13 @@ button {
   margin-top: 1.5rem;
   font-size: 0.95rem;
   justify-content: flex-end;
+  color: var(--text-muted);
 }
 
 .auth-form__switch button {
   background: transparent;
   border: none;
-  color: #2563eb;
+  color: var(--brand-green);
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
@@ -224,11 +245,12 @@ button {
   margin-top: 2rem;
   font-size: 0.95rem;
   text-align: right;
+  color: var(--brand-green);
 }
 
 .profile-card__meta {
   margin-top: 0;
-  color: rgba(15, 23, 42, 0.65);
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
@@ -266,10 +288,10 @@ button {
   margin: 4rem auto;
   max-width: 32rem;
   border-radius: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background-color: rgba(148, 163, 184, 0.12);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
   text-align: center;
-  color: #1e293b;
+  color: var(--text-strong);
 }
 
 .route-guard__message p {
@@ -282,12 +304,676 @@ button {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 9999px;
-  border: 4px solid rgba(59, 130, 246, 0.25);
-  border-top-color: rgba(59, 130, 246, 0.85);
+  border: 4px solid rgba(22, 124, 74, 0.25);
+  border-top-color: var(--brand-green);
   animation: route-guard-spin 1s linear infinite;
 }
 
 @keyframes route-guard-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.section__header h1,
+.section__header h2 {
+  margin: 0;
+}
+
+.section__header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.round-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.round-tabs button {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 0.85rem 1.25rem;
+  color: var(--text-strong);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 180px;
+  text-align: right;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.round-tabs button.active {
+  border-color: rgba(22, 124, 74, 0.65);
+  transform: translateY(-2px);
+}
+
+.round-tabs__date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.round-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.round-summary__window {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.round-summary__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.round-summary__stats span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.round-summary__stats strong {
+  font-size: 1.25rem;
+}
+
+.round-matches {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.round-matches li {
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.round-matches li span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 18px 42px -30px rgba(0, 0, 0, 0.8);
+}
+
+.info-card--muted {
+  background: rgba(19, 19, 19, 0.65);
+}
+
+.leaderboard-table-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 18px 42px -30px rgba(0, 0, 0, 0.8);
+  display: grid;
+  gap: 1rem;
+}
+
+.leaderboard-table__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.leaderboard-table__scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: right;
+}
+
+.leaderboard-table thead {
+  background: rgba(22, 124, 74, 0.12);
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.leaderboard-table tbody tr:hover {
+  background: rgba(22, 124, 74, 0.08);
+}
+
+.leaderboard-user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.leaderboard-user span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.pickem-section {
+  gap: 2rem;
+}
+
+.pickem-panel {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 30px 60px -45px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pickem-panel__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pickem-panel__header h2 {
+  margin: 0;
+}
+
+.pickem-panel__header p {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+}
+
+.pickem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pickem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.pick-card {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(22, 124, 74, 0.15), rgba(0, 0, 0, 0.4));
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 200px;
+}
+
+.pick-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.pick-card__options {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pick-option {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.pick-option input {
+  accent-color: var(--brand-green);
+}
+
+.pick-option.selected {
+  border-color: rgba(22, 124, 74, 0.65);
+  background: rgba(22, 124, 74, 0.25);
+}
+
+.pickem-submit {
+  align-self: flex-start;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(120deg, #167c4a, #0d5b30);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pickem-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pickem-submit:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.pickem-status {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  font-weight: 500;
+}
+
+.pickem-status--success {
+  background: rgba(22, 124, 74, 0.25);
+  border: 1px solid rgba(22, 124, 74, 0.5);
+}
+
+.pickem-status--error {
+  background: rgba(200, 40, 40, 0.2);
+  border: 1px solid rgba(200, 40, 40, 0.5);
+}
+
+.pickem-status--warning {
+  background: rgba(255, 166, 0, 0.18);
+  border: 1px solid rgba(255, 166, 0, 0.4);
+}
+
+.pickem-hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(22, 124, 74, 0.2);
+  border: 1px solid rgba(22, 124, 74, 0.4);
+}
+
+.match-card,
+.team-card,
+.player-card,
+.event-card,
+.article-card {
+  background: linear-gradient(145deg, #171717, #0c0c0c);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 22px 45px -35px rgba(0, 0, 0, 0.9);
+}
+
+.match-card__meta,
+.event-card__meta,
+.article-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.match-card__teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.match-card__team {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+  flex: 1;
+}
+
+.match-card__score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-green);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pill--success {
+  border-color: rgba(22, 124, 74, 0.6);
+  color: #8ef2b6;
+}
+
+.pill--info {
+  border-color: rgba(14, 165, 233, 0.5);
+  color: #bae6fd;
+}
+
+.pill--warning {
+  border-color: rgba(251, 191, 36, 0.5);
+  color: #fde68a;
+}
+
+.article-card__cover {
+  width: 100%;
+  border-radius: 1rem;
+  height: 160px;
+  object-fit: cover;
+}
+
+.article-card__tags,
+.team-card__meta,
+.player-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.team-card__header,
+.player-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.team-card__logo,
+.player-card__photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.team-card__logo img,
+.player-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.detail-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.detail-panel {
+  background: rgba(19, 19, 19, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 24px 60px -40px rgba(0, 0, 0, 0.95);
+}
+
+.detail-panel h2 {
+  margin-top: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.detail-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.detail-list__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.35rem;
+}
+
+.detail-list__item:last-child {
+  border-bottom: none;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.detail-actions a {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.empty-state {
+  padding: 2rem;
+  border-radius: 1.25rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters-bar label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.filters-bar select,
+.filters-bar input {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-strong);
+  padding: 0.5rem 0.75rem;
+}
+
+.page-intro {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.status-tabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.status-tabs button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-strong);
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.status-tabs button.active {
+  background: rgba(22, 124, 74, 0.2);
+  border-color: rgba(22, 124, 74, 0.7);
+}
+
+.detail-cover {
+  width: 100%;
+  border-radius: 1.25rem;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.article-body {
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.article-body p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .match-card__teams {
+    flex-direction: column;
+  }
+}
+
+.data-state {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(19, 19, 19, 0.7);
+  color: #f8fafc;
+  margin-block: 1rem;
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.45);
+}
+
+.data-state h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.data-state p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.data-state__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  background-color: rgba(15, 15, 15, 0.35);
+}
+
+.data-state__content {
+  flex: 1;
+}
+
+.data-state__spinner {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 3px solid rgba(248, 250, 252, 0.35);
+  border-top-color: #167c4a;
+  animation: data-state-spin 0.85s linear infinite;
+}
+
+.data-state--success {
+  border-color: rgba(22, 124, 74, 0.5);
+  background-color: rgba(22, 124, 74, 0.15);
+  color: #022c1a;
+}
+
+.data-state--warning {
+  border-color: rgba(251, 191, 36, 0.45);
+  background-color: rgba(251, 191, 36, 0.15);
+  color: #422006;
+}
+
+.data-state--error {
+  border-color: rgba(220, 38, 38, 0.45);
+  background-color: rgba(220, 38, 38, 0.15);
+  color: #450a0a;
+}
+
+.data-state--info {
+  border-color: rgba(14, 165, 233, 0.45);
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #022c22;
+}
+
+@keyframes data-state-spin {
   from {
     transform: rotate(0deg);
   }

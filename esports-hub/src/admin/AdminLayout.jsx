@@ -19,7 +19,7 @@ const AdminLayout = () => {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <div className="admin-sidebar__brand">إدارة منصة الرياضات الإلكترونية</div>
+        <div className="admin-sidebar__brand">إدارة CDL بالعربي</div>
         <nav className="admin-nav">
           {adminLinks.map((link) => (
             <NavLink key={link.to} to={link.to} end={link.end} className="admin-nav__link">
@@ -40,8 +40,8 @@ const AdminLayout = () => {
 
       <div className="admin-content">
         <header className="admin-content__header">
-          <h1>لوحة التحكم</h1>
-          <p>أدر جميع جوانب منصتك للرياضات الإلكترونية من مكان واحد.</p>
+          <h1>لوحة تحكم CDL بالعربي</h1>
+          <p>كل ما تحتاجه لإدارة محتوى ودورات CDL بالعربي من واجهة واحدة.</p>
         </header>
         <section className="admin-content__body">
           <Outlet />
